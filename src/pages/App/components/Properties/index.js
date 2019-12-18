@@ -17,11 +17,11 @@ const Properties = ({ properties }) =>
   properties.map(property => (
     <Marker
       key={property.id}
-      longitude={property.longitude}
-      latitude={property.latitude}
+      longitude={Number(property.longitude)}
+      latitude={Number(property.latitude)}
     >
       <Pin>
-        <Link to="">{intlMonetary.format(property.price)}</Link>
+        <Link to="">{intlMonetary.format(Number(property.price))}</Link>
       </Pin>
     </Marker>
   ));
