@@ -9,4 +9,10 @@ const CustomButton = ({ children, color, ...props }) => (
   </Button>
 );
 
-// CustomButton.PropTypes
+CustomButton.propTypes = {
+  children: PropTypes.element.isRequired,
+  color: PropTypes.string.isRequired,
+  props: PropTypes.object
+};
+
+export default CustomButton;
