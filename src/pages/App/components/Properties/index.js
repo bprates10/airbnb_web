@@ -13,7 +13,7 @@ const intlMonetary = new Intl.NumberFormat("pt-BR", {
 });
 
 // Marker sera usado para fixar o preço no mapa (quando este for movimentado)
-const Properties = ({ properties }) =>
+const Properties = ({ properties, match }) =>
   properties.map(property => (
     <Marker
       key={property.id}
@@ -21,7 +21,10 @@ const Properties = ({ properties }) =>
       latitude={Number(property.latitude)}
     >
       <Pin>
-        <Link to="">{intlMonetary.format(Number(property.price))}</Link>
+        {/* <Link to="">{intlMonetary.format(Number(property.price))}</Link> */}
+        <Link to={`${match.url}/property/${property.id}`}>
+          {intlMonetary.format(property.price)}
+        </Link>
       </Pin>
     </Marker>
   ));

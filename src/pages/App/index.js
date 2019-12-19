@@ -24,6 +24,7 @@ import { Container, ButtonContainer, PointReference } from "./styles";
 // faz o papel do route na chamada do modal
 import { ModalRoute } from "react-router-modal";
 import AddProperty from "../AddProperty";
+import Property from "../Property";
 
 const TOKEN =
   "pk.eyJ1IjoiYnByYXRlczEwIiwiYSI6ImNrNDl3NmF0dDA4ZHczbW4yZW1rdWJrOTQifQ.UzKv3rtnA1Su1GWa0cuctQ";
@@ -170,6 +171,11 @@ class Map extends Component {
           path={`${match.url}/properties/add`}
           parentPath={match.url}
           component={AddProperty}
+        />
+        <ModalRoute
+          path={`${match.url}/property/:id`}
+          parentPath={match.url}
+          component={Property}
         />
       </Fragment>
     );
